@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - name: Install app dependencies (measurement deps such as PyTorch are not needed here)
+        run: pip install -r requirements.txt pytest ruff==0.17.5
+      - run: ruff check .
+      - run: ruff format --check .
+      - name: Tests (app, calculation, bundle validation; measurement tests need PyTorch and are skipped)
+        run: python -m pytest -q --ignore=tests/test_measure.py

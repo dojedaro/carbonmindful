@@ -1,0 +1,3 @@
+label,pue,meaning,source,period,retrieved,status
+Efficient fleet,1.09,Google fleet-wide trailing twelve-month PUE,Google Data Centers efficiency page https://datacenters.google/efficiency/,Q2 2026,2026-11-01,Primary source for Google's own figure
+Survey average,1.54,Weighted average annual PUE of survey respondents,Uptime Institute Global Data Center Survey 2025 (report p.7; weighted average; n=681),2025,2026-11-01,Confirmed in Uptime's report
